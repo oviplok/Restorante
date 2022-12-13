@@ -4,9 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity">
+    android:id="@+id/main_act"
+    android:background="@drawable/gardient_background"
+    tools:context=".view.activity.MainActivity">
+
+    <ImageView
+        android:layout_width="206dp"
+        android:layout_height="128dp"
+        android:layout_above="@+id/GuestLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        app:srcCompat="@drawable/icon" />
 
     <LinearLayout
+        android:id="@+id/GuestLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -14,6 +25,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:visibility="gone"
             android:layout_width="349dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="60dp"
@@ -21,40 +33,44 @@
             android:gravity="center_vertical"
             android:text="Если вы сотрудник персонала войдите в аккаунт!" />
 
+<!--        android:visibility="gone"-->
         <EditText
-            android:id="@+id/login"
+
+            android:id="@+id/people_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:drawableLeft="@drawable/ic_action_email"
-            android:hint="Ведите ваш id"
+            android:hint="Кол-во людей"
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/fio_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:drawableLeft="@drawable/ic_action_password"
-            android:hint="Введите пароль"
-            android:inputType="textPassword"
+            android:hint="Как к вам обращаться"
             android:textSize="20dp" />
 
         <Button
-            android:id="@+id/auth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Войти" />
-
-        <Button
-            android:id="@+id/guest_btn"
+            android:id="@+id/client_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Вы гость?" />
+            android:text="Войти как гость" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/emp_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:text="Войти как сотрудник" />
 
 </RelativeLayout>
